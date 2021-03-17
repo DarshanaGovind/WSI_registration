@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jan 23 12:51:11 2019
+From xml to binary function in py-swi: https://github.com/ysbecca/py-wsi 
 
-@author: d8
 """
 from xml.dom import minidom
 import numpy as np

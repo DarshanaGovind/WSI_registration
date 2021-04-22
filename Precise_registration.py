@@ -29,6 +29,9 @@ warnings.filterwarnings("ignore")
 '''==========='''
 
 highres_w = 200   
+X_translation = 1
+Y_translation = 162
+
 sourcePAS = openslide.open_slide("/hdd/d8/tempslides/PAS/JW1.svs")
 sourceIF = openslide.open_slide("/hdd/d8/tempslides/IF/JW1.svs")
 PASxmlpath = "/hdd/d8/tempslides/PAS/JW1.xml" #glom annotation path
@@ -60,7 +63,7 @@ else:
 '''===================================='''
 print("Registering...")
 
-chktform = SimilarityTransform(scale=None, rotation=None, translation=(1,162))
+chktform = SimilarityTransform(scale=None, rotation=None, translation=(X_translation,Y_translation))
 FinalregIF = warp(IF[:,:,0:3], inverse_map=chktform.inverse,output_shape=PAS_rescaled[:,:,0:3].shape)
 
 '''XML annotation to mask'''
